@@ -218,13 +218,13 @@ body{
 
 .flagged:not(.clicked){
 	cursor: default;
-	background-image: url(./img/flag.png);
+	background-image: url("./img/flag.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
 .incorrectFlag{
-	background-image: url(./img/brokenFlag.png) !important;
+	background-image: url("./img/brokenFlag.png") !important;
 }
 
 .resultsPanel{

@@ -1,5 +1,7 @@
 // TODO - make it look less bad
 // TODO - implement view board button
+// TODO - diagnose game not finishing when all flags are correctly placed before end
+// TODO - comments
 
 import React, {Component} from "react";
 
@@ -108,11 +110,9 @@ class OrdinanceRemoval extends Component{
 				if(bomb[0] === data.bombClicked[0] && bomb[1] === data.bombClicked[1])continue;
 				var id = {x: bomb[0], y: bomb[1]};
 				if(data.board[bomb[1]][bomb[0]].isFlagged === true){
-					//$("#" + id).addClass("correctFlag");
 					correctFlags++;
 				}else{
 					ids[ids.length] = id;
-					//$("#" + id).css("transition", "all 0.2s ease-in-out");
 				}
 			}
 			data.correctFlags = correctFlags;
