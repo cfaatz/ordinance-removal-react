@@ -76,6 +76,8 @@ class OrdinanceRemoval extends Component{
 		event.preventDefault();
 		let id = event.target.id.split(";");
 		API.click(id[0], id[1], (data) => {
+			console.log("clicked: " + id);
+			console.log(data);
 			this.updateBoard(data);
 		});
 	}
@@ -84,6 +86,8 @@ class OrdinanceRemoval extends Component{
 		event.preventDefault();
 		let id = event.target.id.split(";");
 		API.flag(id[0], id[1], (data) => {
+			console.log("flagged: " + id);
+			console.log(data);
 			this.updateBoard(data);
 		});
 	}
@@ -130,6 +134,10 @@ class OrdinanceRemoval extends Component{
 	}
 
 	revealBombs(ids, delay, callback){
+		if(ids.length === 0){
+			callback();
+			return;
+		}
 		let id = ids.pop();
 		let data = this.state.board;
 		data.board[id.y][id.x].isClicked = true;
@@ -167,6 +175,7 @@ class OrdinanceRemoval extends Component{
 	}
 
 	reset(){
+		this.headerComponent.current.resetTimer();
 		this.setState({
 			gameRunning: false,
 			menuOpen: true, 

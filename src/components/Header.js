@@ -35,7 +35,7 @@ class Header extends Component {
 
 		return (
 			<div className="header" ref={this.props.passRef}>
-				<div className="titlePanel" ref={(titleRef) => {this.titleRef = titleRef}}>Ordinance Disposal</div>
+				<div className="titlePanel" ref={(titleRef) => {this.titleRef = titleRef}}>Ordinance Removal</div>
 				<div className="scorePanel" style={{height: this.state.scoreHeight}}>
 					<div className="scoreText">Flags: <span id="flags">0</span>&nbsp;&nbsp;&nbsp;&nbsp;
 					Time:&nbsp;

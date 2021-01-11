@@ -26,6 +26,11 @@ class Timer extends Component {
 		this.setState({intervalId: -1});
 	}
 
+	reset(){
+		this.stop();
+		this.setState({time: 0});
+	}
+
 	getTime(){
 		return this.state.time;
 	}
