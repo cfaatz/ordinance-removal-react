@@ -220,7 +220,12 @@ class OrdinanceRemoval extends Component{
 			<div className="ordinanceRemoval">
 				<div className="loadingVeneer" style={showVeneer}><div className="loadingText">Loading...</div></div>
 
-				<Header windowMeta={this.state.windowMeta} passRef={this.headerRef} ref={this.headerComponent} />
+				<Header 
+					windowMeta={this.state.windowMeta} 
+					passRef={this.headerRef} 
+					ref={this.headerComponent} 
+					flags={this.state.board === null ? "0" : this.state.board.flags}
+				/>
 
 				<Board 
 					windowMeta={this.state.windowMeta}
